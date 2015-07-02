@@ -1,0 +1,36 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body{
+	overflow: auto;
+	/*margin: 1%;*/
+	/*overflow: hidden;*/
+}
+
+
+#slider-wrapper{
+	width: 100%;
+	height: 100px;
+}
+
+.handle{
+	width: 2px;
+	height: 100%;
+	background: blue;
+	display: inline-block;
+	cursor: ew-resize;
+}
+
+.colorbar{
+    display: inline-block;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.posterPreviewContainer img{
+    height: 90%;
+
+}
