@@ -1,3 +1,40 @@
+function range( a, b ){
+    var temp =[];
+    for( i = 0 ;  i < b - a; i++ ){
+        temp.push( i );
+    }
+    return temp;
+}
+
+
+Number.prototype.map = function ( in_min , in_max , out_min , out_max ) {
+  return( this - in_min ) * ( out_max - out_min ) / ( in_max - in_min ) + out_min;
+}
+
+Number.prototype.mapInt = function ( in_min , in_max , out_min , out_max ) {
+  return Math.round( ( this - in_min ) * ( out_max - out_min ) / ( in_max - in_min ) + out_min );
+}
+
+function updateStyleSheet( query ){
+    var style = $('<style type="text/css">').html(query)
+    $('head').append( style );
+}
+
+
+var getItemWidth = function( selector ){
+	var isItId = selector.match(/#/);
+	if( isItId )
+		var item = $('<div>').attr('id', selector.slice(1) );
+	else
+		var item = $('<div>').addClass( selector.slice(1) );
+
+	item.appendTo( $('body') );
+	var w = item.width();
+	item.remove();
+	return w;
+}
+
+
 function getScrollbarWidth() {
     var outer = document.createElement("div");
     outer.style.visibility = "hidden";
@@ -19,18 +56,4 @@ function getScrollbarWidth() {
     outer.parentNode.removeChild(outer);
     
     return widthNoScroll - widthWithScroll;
-}
-
-
-function range( a, b ){
-    var temp =[];
-    for( i = 0 ;  i < b - a; i++ ){
-        temp.push( i );
-    }
-    return temp;
-}
-
-
-Number.prototype.map = function ( in_min , in_max , out_min , out_max ) {
-  return( this - in_min ) * ( out_max - out_min ) / ( in_max - in_min ) + out_min;
 }

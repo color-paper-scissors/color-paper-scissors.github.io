@@ -1,24 +1,37 @@
 <html>
   <head>
       <meta name="description" content="experiment 1">
-      <meta name="keywords" content="">
-      <meta name="author" content="Amir Houieh">
+      <meta name="keywords" content="">c
+      <meta name="author" content="Amir Houieh, Gabor Kerekes">
       <meta charset="UTF-8">
 
       <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link rel="stylesheet" type="text/css" href="css/grid.css">
-      <!--<script src="csi/jquery-2.1.0.min.js"></script>-->
-      <script src="csi/jquery-2.1.1.js"></script>
+      <script src="csi/jquery-2.1.0.min.js"></script>
       <script src="csi/jquery-ui.min.js"></script>
       <script src="imgData.js"></script>
       <script src="csi/names.js"></script>
+      <script src="csi/spin.js"></script>
       <script src="csi/utils.js"></script>
       <script src="csi/init.js"></script>
   </head>
 
   <body>
-    <div id="colorbars"></div>
-    <div id="grid"></div>
+    <header>
+      <nav>
+        <span class="view-handler link" id="grid"> grid view </span>
+        <span class="view-handler link" id="bar"> bar view </span>
+        <div class="search">
+          <input onclick='this.value=""' cat="designer" type="text" value="look for designer..."/>
+          <input onclick='this.value=""' cat="graduate" type="text" value="look for gradu..."/>
+          <span class="filter-handler link" id="search"> > </span>
+        </div>
+      </nav>
+    </header>
+
+    <div class="galleryWrapper" id="colorbars"></div>
+    <div class="galleryWrapper" id="gridview"></div>
+
+
   </body>
 
 </html>
